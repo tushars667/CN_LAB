@@ -1,0 +1,54 @@
+Aim: To create topology and simulate a single PDU from source to destination using a hub and a switch as connecting devices.
+
+Topology: refer Diagram
+
+Procedure:
+1) Create a generic hub and switch.
+2) Add Generic PC's, connect 4 to hub, 4 to switch.
+3) Connect them using copper straight cables.
+4) Place notes with the IP addresses assigned
+
+
+Observations:
+A) Learning:
+1) Hub sends information to all connected devices, Switch sends information to the specific device.
+2) In a hub, Before adding a new device, first we need to check if ports are available. If no ports are available, then turn off the device first and drag and drop ports.
+4) In a generic hub, a maximum number of 10 devices.
+5) Switch has one console and 6 fast ethernet connections. No option of adding an extra port.
+ 
+
+B) Results:
+1) In realtime mode,
+for Hub:
+
+PC>ping 10.0.0.2 (input)
+Pinging 10.0.0.2 with 32 bytes of data:
+Reply from 10.0.0.2: bytes=32 time=10ms TTL=128
+Reply from 10.0.0.2: bytes=32 time=4ms TTL=128
+Reply from 10.0.0.2: bytes=32 time=4ms TTL=128
+Reply from 10.0.0.2: bytes=32 time=4ms TTL=128
+Ping statistics for 10.0.0.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 4ms, Maximum = 10ms, Average = 5ms
+
+
+for Switch:
+
+PC>ping 10.0.0.71
+Pinging 10.0.0.71 with 32 bytes of data:
+Reply from 10.0.0.71: bytes=32 time=0ms TTL=128
+Reply from 10.0.0.71: bytes=32 time=0ms TTL=128
+Reply from 10.0.0.71: bytes=32 time=0ms TTL=128
+Reply from 10.0.0.71: bytes=32 time=0ms TTL=128
+Ping statistics for 10.0.0.71:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+2) In simulation mode,
+  for Hub:
+ a simple PDU sent from a source is sent to the Hub and from there it is sent to all the nodes.
+
+for Switch:
+a simple PDU is sent from source to switch and from there to the specific device. 
